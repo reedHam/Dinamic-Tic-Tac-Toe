@@ -19,11 +19,13 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::StartClick(TObject *Sender)
 {
 	for (int i = 0; i < 9; i++) {
+		// Add buttons if they do not exist
 		if(XOButtons[i] == NULL){
 		XOButtons[i] = new TXOButtons(this);
 		XOButtons[i]->Parent = this;
 		XOButtons[i]->Top = 50 + ((i%3)* 55);
 
+		// Draw the buttons on a grid
 		if (i <= 2) {
 			XOButtons[i]->Left = Start->Left;
 		}
